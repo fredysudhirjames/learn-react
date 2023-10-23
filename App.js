@@ -1,13 +1,5 @@
-{
-/*
-HTML structure added to the root element.
-<div id="parent">
-	<div id="children">
-		<h1>I'm a h1 tag</h1>
-		<h2>I'm a h2 tag</h2>
-	</div>
-</div> */
-}
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 // This creates an object which is then rendered in the root element.
 const parent = React.createElement(
@@ -19,6 +11,7 @@ const parent = React.createElement(
 		[React.createElement( 'h1', {}, "I'm a h1 tag"), React.createElement( 'h2', {}, "I'm a h2 tag")]
 	)
 )
+console.log(parent)
 
 const heading = React.createElement( 'h1', {id: 'heading', attribute:"abc"}, 'Hello world!!')
 const root = ReactDOM.createRoot( document.getElementById( 'root' ) );
