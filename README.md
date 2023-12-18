@@ -26,3 +26,11 @@ There are 2 types of exports/import
 	* used when there are multiple variables to export.
 	* done by specifying "export" in from of the variable
 	* while importing we use curly brackets {VARIABLE_NAME}
+
+# 2 types of routing
+	- client side routing
+	- server side routing
+
+# Login page using Formik
+	- a simple page with a Formik form
+	- on submit <i>alert</i> the form values

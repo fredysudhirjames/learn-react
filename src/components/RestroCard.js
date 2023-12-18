@@ -1,7 +1,8 @@
-import { CDN_URL } from "../utils/constants"
+import { CDN_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 const RestoCard = (props) => {
 	const { resData } = props
-	const { name, cloudinaryImageId, cuisines, avgRating, sla, costForTwo } = resData?.info
+	const { name, cloudinaryImageId, cuisines, avgRating, sla, costForTwo, id } = resData?.info
 	return (
 		<div className="res-card">
 			<figure className="res-card__figure">

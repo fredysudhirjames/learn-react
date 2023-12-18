@@ -2,6 +2,7 @@ import {useState, useCallback, useEffect} from "react";
 import RestoCard from "./RestroCard"
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 // Debounce function.
 const debounce = (func, delay) => {
@@ -34,7 +35,7 @@ const Body = () => {
 	// Filter the restaurants list by the searched term. Search in Name or Cuisines.
 	const searchRes = (searchTerm) => {
 		const filteredRestaurants = listOfRestaurants.filter(
-			restau => restau.info.name.toLowerCase().includes(searchTerm.toLowerCase()) || restau.info.cuisines.some(cuisine => cuisine.toLowerCase().includes(searchTerm.toLowerCase()))
+			restau => restau.info.name.toLowerCase().includes(searchTerm.toLowerCase())
 		)
 		setFilteredRestaurants(filteredRestaurants)
 	}
@@ -91,10 +92,13 @@ const Body = () => {
 				</button>
 			</div>
 			
-			
 			<div className="res-container">
 				{
-					filteredRestaurants.map((restaurant) => (<RestoCard key={restaurant.info.id} resData={restaurant} />))
+					filteredRestaurants.map((restaurant) => (
+						<Link to={'/restaurant/'+restaurant.info.id}>
+							<RestoCard key={restaurant.info.id} resData={restaurant} />
+						</Link>
+					))
 				}
 			</div>
 		</div>
