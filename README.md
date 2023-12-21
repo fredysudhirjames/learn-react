@@ -34,3 +34,9 @@ There are 2 types of exports/import
 # Login page using Formik
 	- a simple page with a Formik form
 	- on submit <i>alert</i> the form values
+
+# createHashRouter
+	- instead of using normal URLs, it will use the hash portion of the URL to manage the "application URL"
+
+# createMemoryRouter
+	- instead of using borwser's history a memory router manages own stack of history in the memory.
