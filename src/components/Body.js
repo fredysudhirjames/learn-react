@@ -3,6 +3,7 @@ import RestoCard from "./RestroCard"
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useOnlineStatus } from "../utils/useOnlineStatus";
 
 // Debounce function.
 const debounce = (func, delay) => {
@@ -31,6 +32,8 @@ const Body = () => {
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	// Extracting the desired card
 	const targetCardId = "restaurant_grid_listing";
+
+	const checkOnlineStatus = useOnlineStatus();
 
 	// Filter the restaurants list by the searched term. Search in Name or Cuisines.
 	const searchRes = (searchTerm) => {
@@ -69,6 +72,10 @@ const Body = () => {
 	// Renderin on based of condition - conditional rendering.
 	if ( 0 === listOfRestaurants.length ) {
 		return <Shimmer />
+	}
+
+	if ( checkOnlineStatus === false ) {
+		return <h1>Looks like you are offline. Check you internet connection!!!</h1>
 	}
 
 	return (
