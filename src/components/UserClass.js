@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from '../utils/UserContext';
 
 class UserClass extends React.Component {
 	// First constructor is loaded
@@ -42,6 +43,9 @@ class UserClass extends React.Component {
 		const {name, location} = this.state.userInfo
 		return (
 			<div className="user-card">
+				<UserContext.Consumer>
+					{(data) => data.loggedInUser}
+				</UserContext.Consumer>
 				<h2>{name}</h2>
 				<h3>Location: {location}</h3>
 				<p>Contact: query@company.com</p>

@@ -6,7 +6,7 @@ export const useRestaurantMenu = (restaurantId) => {
 	
 	useEffect(() => {
 		fetchResInfo()
-	})
+	}, [])
 
 	const fetchResInfo = async () => {
 		const data = await fetch( RES_MENU_API + restaurantId)

@@ -21,8 +21,11 @@
   },
   "homepage": "https://github.com/fredy-sudhir-james/learn-react#readme",
   "devDependencies": {
+    "os-browserify": "^0.3.0",
     "parcel": "^2.10.0",
-    "process": "^0.11.10"
+    "postcss": "^8.4.32",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.0"
   },
   "dependencies": {
     "formik": "^2.4.5",
